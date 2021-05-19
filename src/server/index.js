@@ -1,5 +1,6 @@
-import { checkForName } from './js/nameChecker'
-import { handleSubmit } from './js/formHandler'
+import { checkForName } from './client/js/nameChecker'
+import { handleSubmit } from 'src/client/js/formHandler.js'
+
 var path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
