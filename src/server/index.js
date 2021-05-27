@@ -1,11 +1,18 @@
-import { checkForName } from './client/js/nameChecker'
-import { handleSubmit } from 'src/client/js/formHandler.js'
+// import { checkForName } from './client/js/nameChecker'
+// import { handleSubmit } from 'src/client/js/formHandler.js'
+const dotenv = require('dotenv');
+dotenv.config();
+
 
 var path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
+const apiKey = process.env.API_KEY;
+
 
 const app = express()
+
+
 
 app.use(express.static('dist'))
 
@@ -26,7 +33,7 @@ app.get('/test', function (req, res) {
 })
 
 
-console.log(checkForName);
+console.log(`Your API key is ${process.env.API_KEY}`);
 
-alert("hello!!")
+// alert("hello!!")
 
