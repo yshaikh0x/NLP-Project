@@ -1,19 +1,18 @@
-// import { checkForName } from './client/js/nameChecker'
-// import { handleSubmit } from 'src/client/js/formHandler.js'
 const dotenv = require('dotenv');
 dotenv.config();
 
-
+//Define Global Variables
 var path = require('path')
+const cors = require('cors') //cors for cross origin allowance
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
 const apiKey = process.env.API_KEY;
-
-
+//start up instance of app
 const app = express()
 
-
-
+/*Middleware*/
+app.use(cors())
+//Initialize main project folder
 app.use(express.static('dist'))
 
 console.log(__dirname)
