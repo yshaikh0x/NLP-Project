@@ -1,4 +1,5 @@
 const path = require('path')
+const WorkboxPlugin = require('workbox-webpack-plugin');
 const webpack = require('webpack')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
@@ -36,6 +37,7 @@ module.exports = {
             filename: "./index.html",
         }),
         new MiniCssExtractPlugin({ 
-            filename: "[name].css" })
+            filename: "[name].css" }),
+        new WorkboxPlugin.GenerateSW()
     ]
 }
