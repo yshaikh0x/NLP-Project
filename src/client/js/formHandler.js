@@ -7,11 +7,12 @@ function handleSubmit(event) {
     Client.checkForName(formText)     
 
     console.log("::: Form Submitted :::")
-    fetch('http://localhost:8081/test')
+    fetch('http://localhost:8000')
     .then(res => {
         return res.json()
     })
     .then(function(data) {
+        console.log("response from /postData", res);
         document.getElementById('results').innerHTML = data.message
     })
 
