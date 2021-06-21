@@ -15,7 +15,7 @@ const updateUI = async ()=> {
         irony.innerHTML=`Irony - ${projectData.irony}`;
         scoreTag.innerHTML=`ScoreTag - ${projectData.scoreTag}`;
     } catch (error) {
-        console.log("ERROR", error);
+        console.log("ENTRY ERROR", error);
         alert("Please enter an URL")
     }
 }

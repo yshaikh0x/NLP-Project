@@ -1,22 +1,23 @@
-
-function handleSubmit(event) {
+async function handleSubmit(event) {
     event.preventDefault()
-
     // check what text was put into the form field
     let formText = document.getElementById('name').value
-    Client.checkForName(formText)     
-
+    Client.checkForName(formText)
     console.log("::: Form Submitted :::")
-    fetch('http://localhost:8000')
-    .then(res => {
-        return res.json()
-    })
-    .then(function(data) {
-        console.log("response from /postData", res);
-        document.getElementById('results').innerHTML = data.message
-    })
-
-
+    const res = await fetch('http://localhost:8000/postResults', {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ articleUrl: formText }),
+    });
+    try {
+        const newData = await res.json();
+        console.log("response from /postData", newData);
+        document.getElementById('results').innerHTML = newData.message
+    } catch (error) {
+        console.log("error1", error);
+    }
 }
-
 export { handleSubmit }
