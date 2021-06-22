@@ -20,10 +20,10 @@
         <main>
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" placeholder="Please Enter the URL">
+                    <input id="inputURL" type="text" name="input" value="" placeholder="Please Enter a URL">
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
                 </form>
-            <section>
+            </section>
 
             <section>
                 <div id="results">
@@ -39,7 +39,7 @@
         <footer>
             <p>Project by Yusrah Shaikh</p>
         </footer>
-        <script>
+        <!-- <script>
             // Check that service workers are supported
             if ('serviceWorker' in navigator) {
                 // Use the window load event to keep the page load performant
@@ -47,7 +47,6 @@
                     navigator.serviceWorker.register('/service-worker.js');
                 });
             }
-           </script>
-
+           </script> -->
     </body>
 </html>

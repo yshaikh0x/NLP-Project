@@ -46,7 +46,7 @@ app.post('/postResults', async (req, res) => {
     const baseURL = "https://api.meaningcloud.com/sentiment-2.1?key="
     const key = process.env.API_KEY
     console.log('article =====+> ', article)
-    const articleResults = await fetch(`https://api.meaningcloud.com/sentiment-2.1?key=${key}&url=${article}&lang=en`,
+    const articleResults = await fetch (`https://api.meaningcloud.com/sentiment-2.1?key=${key}&url=${article}&lang=en`,
         {
             method: "POST",
             headers: {

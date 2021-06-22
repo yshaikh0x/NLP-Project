@@ -1,4 +1,4 @@
-import { checkForName } from './js/nameChecker.js'
+import { urlValidation } from './js/nameChecker.js'
 import { handleSubmit } from './js/formHandler.js'
 import { updateUI } from './js/UIresponse'
 
@@ -9,12 +9,12 @@ import './styles/footer.scss'
 import './styles/form.scss'
 import './styles/header.scss'
 
-console.log(checkForName);
+console.log(urlValidation);
 
 alert("I EXIST")
 
 export {
-    checkForName,
+    urlValidation,
     handleSubmit,
     updateUI
    }

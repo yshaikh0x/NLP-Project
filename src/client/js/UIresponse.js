@@ -16,10 +16,8 @@ const updateUI = async ()=> {
         scoreTag.innerHTML=`ScoreTag - ${projectData.scoreTag}`;
     } catch (error) {
         console.log("ENTRY ERROR", error);
-        alert("Please enter an URL")
     }
 }
-
 
 
 export { updateUI }
