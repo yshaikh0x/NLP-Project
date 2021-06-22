@@ -15,7 +15,10 @@ async function handleSubmit(event) {
     try {
         const newData = await res.json();
         console.log("response from /postData", newData);
-        document.getElementById('results').innerHTML = newData.message
+        document.getElementById('subjectivity').innerHTML = newData.subjectivity
+        document.getElementById('agreement').innerHTML = newData.agreement
+        document.getElementById('confidence').innerHTML = newData.confidence
+        document.getElementById('irony').innerHTML = newData.irony
     } catch (error) {
         console.log("error1", error);
     }
