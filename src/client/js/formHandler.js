@@ -4,7 +4,7 @@ async function handleSubmit(event) {
     let formText = document.getElementById('name').value;
     const inputURL = document.getElementById('inputURL').value;
 
-    Client.urlValidation(formText)
+    Client.urlValidation(inputURL)
     console.log("::: Form Submitted :::")
     const res = await fetch('http://localhost:8000/postResults', {
         method: 'POST',
@@ -12,7 +12,7 @@ async function handleSubmit(event) {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ articleUrl: formText }),
+        body: JSON.stringify({ articleUrl: inputURL }),
     });
         try {
         const newData = await res.json();
