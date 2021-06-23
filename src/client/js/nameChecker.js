@@ -20,7 +20,8 @@ function urlValidation(inputURL) {
     let validUrl = inputURL.match(/^(ftp|http|https):\/\/[^ "]+$/);
     if(validURL.includes(inputURL)) {
         alert("Welcome, Captain!")
-    } else {
+    } 
+    else {
         console.log("Enter a valid URL")
         alert("Enter a valid URL")
     }
