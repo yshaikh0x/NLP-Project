@@ -4,7 +4,7 @@ async function handleSubmit(event) {
     let formText = document.getElementById('name').value;
     const inputURL = document.getElementById('inputURL').value;
 
-    Client.checkForName(formText)
+    Client.urlValidation(formText)
     console.log("::: Form Submitted :::")
     const res = await fetch('http://localhost:8000/postResults', {
         method: 'POST',
@@ -14,7 +14,7 @@ async function handleSubmit(event) {
         },
         body: JSON.stringify({ articleUrl: formText }),
     });
-    try {
+        try {
         const newData = await res.json();
         console.log("response from /postData", newData);
         document.getElementById('subjectivity').innerHTML = newData.subjectivity
